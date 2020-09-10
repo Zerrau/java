@@ -11,16 +11,23 @@
  */
 
 
+import java.util.Scanner;
+
 public class Palindrome {
     public static void main(String[] args) {
-        String name = "Madam, I'm Adam!";
+
+        // Считывание с клавиатуры
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input: ");
+        String num = in.next();
+        in.close();
 
         //убрать все знаки кроме a-z A-Z 0-9
-        String[] one = name.split("[^a-zA-Z0-9]");
+        String[] one = num.split("[^a-zA-Z0-9А-Яа-я]");
 
         //предложение наоборот
-        String eman = new StringBuffer(name).reverse().toString();
-        String[] two = eman.split("[^a-zA-Z0-9]");
+        String eman = new StringBuffer(num).reverse().toString();
+        String[] two = eman.split("[^a-zA-Z0-9А-Яа-я]");
 
         //Соединение всего массива one в одну строку
         StringBuilder stringBuilder = new StringBuilder();
@@ -42,10 +49,10 @@ public class Palindrome {
 
         //Проверка на палиндром
         System.out.println(a.equals(b));
-
-
     }
-
 }
+
+
+
 
 
